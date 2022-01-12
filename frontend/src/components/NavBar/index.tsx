@@ -1,12 +1,15 @@
-import {ReactComponent as GithubIcon} from 'assets/img/github.svg';
-import './styles.css';
+import { ReactComponent as GithubIcon } from "assets/img/github.svg";
+import "./styles.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-    return (
-        <header>
+  return (
+    <header>
       <nav className="container">
         <div className="dsmovie-nav-content">
-          <h1>DSMovie</h1>
+          <Link to="/">
+            <h1>DSMovie</h1>
+          </Link>
           <a
             href="https://github.com/devsuperior"
             target="_blank"
@@ -20,7 +23,7 @@ function NavBar() {
         </div>
       </nav>
     </header>
-    )
+  );
 }
 
 export default NavBar;
