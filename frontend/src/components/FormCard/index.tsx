@@ -6,21 +6,18 @@ import axios from "axios";
 import { BASE_URL } from "utils/requests";
 
 type Props = {
-  movieId : string;
-}
+  movieId: string;
+};
 
-function FormCard( { movieId } :Props) {
+function FormCard({ movieId }: Props) {
+  const [movie, setMovie] = useState<Movie>();
 
+  useEffect(() => {
+    axios.get(`${BASE_URL}/movies/${movieId}`).then((response) => {
+      setMovie(response.data);
+    });
+  }, [movieId]);
 
-    const [movie, setMovie] = useState<Movie>();
-
-    useEffect(() => {
-        axios.get(`${BASE_URL}/movies/${movieId}`).then(response => {
-            setMovie(response.data);
-        }); 
-    })
-
-  
   return (
     <div className="dsmovie-form-container">
       <img
@@ -52,7 +49,8 @@ function FormCard( { movieId } :Props) {
           </div>
         </form>
         <Link to="/">
-          <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+          <button 
+          className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
         </Link>
       </div>
     </div>
