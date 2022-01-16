@@ -5,11 +5,11 @@ import "./styles.css";
 
 type Props = {
   score: number;
-}
+};
 
 type StarProps = {
   fill: number;
-}
+};
 
 function getFills(score: number) {
   const fills = [0, 0, 0, 0, 0];
@@ -28,20 +28,17 @@ function getFills(score: number) {
   return fills;
 }
 
-function Star( { fill } : StarProps) {
-  if(fill === 0){
-    return <StarEmpty />
-  }
-  else if(fill === 1){
-    return <StarFull />
-  }
-  else {
-    return <StarHalf />
+function Star({ fill }: StarProps) {
+  if (fill === 0) {
+    return <StarEmpty />;
+  } else if (fill === 1) {
+    return <StarFull />;
+  } else {
+    return <StarHalf />;
   }
 }
 
-function MovieStars( { score } : Props) {
-
+function MovieStars({ score }: Props) {
   const fills = getFills(score);
 
   return (

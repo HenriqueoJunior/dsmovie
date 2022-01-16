@@ -11,13 +11,13 @@ function NavBar() {
             <h1>DSMovie</h1>
           </Link>
           <a
-            href="https://github.com/devsuperior"
+            href="https://github.com/henriqueojunior"
             target="_blank"
             rel="noreferrer"
           >
             <div className="dsmovie-contact-container">
               <GithubIcon />
-              <p className="dsmovie-contact-link">/devsuperior</p>
+              <p className="dsmovie-contact-link">/HenriqueoJunior</p>
             </div>
           </a>
         </div>
